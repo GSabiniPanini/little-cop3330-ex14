@@ -2,10 +2,12 @@ package base;
 
 public class WI extends State{
     @Override
-    public void output(Integer amount) {
-        float subtotal = amount;
+    public String output(double amount) {
+        double subtotal = amount;
         double tax = .055 * subtotal;
         double total = subtotal + tax;
-        System.out.printf("The subtotal is $%.2f.%nThe tax is $%.2f.%nThe total is $%.2f.", subtotal, tax, total);
+        String stringsubtotal = String.format("%.2f", subtotal);
+        String msg = ("The subtotal is $" + stringsubtotal + ".\nThe tax is $" + tax + ".\nThe total is $" + total + ".");
+        return msg;
     }
 }

@@ -38,16 +38,21 @@ public class App
     {
         App myApp = new App();
 
-        Integer amount = myApp.getamount();
+        double amount = myApp.getamount();
         in.nextLine();
+        State m = new State();
+        String msg = m.output(amount);
         if(myApp.getstate().equals("WI"))
         {
             State s = new WI();
-            s.output(amount);
-            System.exit(0);
+            msg = s.output(amount);
         }
-        State m = new State();
-        m.output(amount);
+        myApp.output(msg);
+    }
+
+    public void output(String msg)
+    {
+        System.out.println(msg);
     }
 
     public String getstate()
@@ -57,10 +62,10 @@ public class App
         return state;
     }
 
-    public Integer getamount()
+    public double getamount()
     {
         System.out.print("What is the order amount? ");
-        Integer amount = in.nextInt();
+        double amount = in.nextDouble();
         return amount;
     }
 }

@@ -1,7 +1,8 @@
 package base;
 
 public class State {
-    public void output(Integer amount) {
-        System.out.println("The total is $" + amount + ".");
+    public String output(double amount) {
+        String msg = ("The total is $" + amount + ".");
+        return msg;
     }
 }
