@@ -2,8 +2,9 @@ package base;
 
 public class WI extends State{
     @Override
-    public String output(double amount) {
-        double subtotal = amount;
+    public String output(Integer amount)
+    {
+        float subtotal = amount;
         double tax = .055 * subtotal;
         double total = subtotal + tax;
         String stringsubtotal = String.format("%.2f", subtotal);

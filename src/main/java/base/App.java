@@ -38,7 +38,7 @@ public class App
     {
         App myApp = new App();
 
-        double amount = myApp.getamount();
+        Integer amount = myApp.getamount();
         in.nextLine();
         State m = new State();
         String msg = m.output(amount);
@@ -62,10 +62,10 @@ public class App
         return state;
     }
 
-    public double getamount()
+    public Integer getamount()
     {
         System.out.print("What is the order amount? ");
-        double amount = in.nextDouble();
+        Integer amount = in.nextInt();
         return amount;
     }
 }
